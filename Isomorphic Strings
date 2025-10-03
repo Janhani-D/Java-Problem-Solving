@@ -1,0 +1,25 @@
+// Isomorphic Strings: https://leetcode.com/problems/isomorphic-strings/description/
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if (s.length() != t.length()) return false;
+
+        int[] mapST = new int[256]; // map from s -> t
+        int[] mapTS = new int[256]; // map from t -> s
+
+        for (int i = 0; i < s.length(); i++) {
+            char sc = s.charAt(i);
+            char tc = t.charAt(i);
+
+            // If mapping is inconsistent, return false
+            if (mapST[sc] != 0 && mapST[sc] != tc) return false;
+            if (mapTS[tc] != 0 && mapTS[tc] != sc) return false;
+
+            // Store mapping (1-based to avoid confusion with default 0)
+            mapST[sc] = tc;
+            mapTS[tc] = sc;
+        }
+
+        return true;
+    }
+}
