@@ -1,0 +1,16 @@
+// Valid Anagram: https://leetcode.com/problems/valid-anagram/
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        int n=s.length();
+        int m=t.length();
+        char[] S=s.toCharArray();
+        char[] T=t.toCharArray();
+
+        Arrays.sort(S);
+        Arrays.sort(T);
+
+        return Arrays.equals(S,T);
+
+    }
+}
