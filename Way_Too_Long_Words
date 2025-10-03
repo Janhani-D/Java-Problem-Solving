@@ -1,0 +1,22 @@
+// Way Too Long Words: https://codeforces.com/problemset/problem/71/A
+
+//Solution
+import java.util.Scanner;
+public class abbre {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n;
+        n=sc.nextInt();
+        
+        while(n-- >0){
+            String a=sc.next();
+            int len=a.length();
+            if(len<=10){
+                System.out.println(a);
+            }else{
+                System.out.println(""+a.charAt(0)+(len-2)+a.charAt(len-1));
+            }
+        }
+        sc.close();
+    }
+}
